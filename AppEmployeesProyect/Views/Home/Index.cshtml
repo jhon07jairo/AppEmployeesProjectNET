@@ -1,0 +1,46 @@
+﻿@model List<AppEmployeesProyect.Models.Employee>
+
+@{
+	ViewData["Title"] = "Datos Empleados";
+}
+
+<div>
+	<form method="get" action="@Url.Action("Index", "Home")">
+		<div class="form-group">
+			<label for="searchInput">Search:</label>
+			<input type="text" class="form-control" id="searchInput" name="searchString" placeholder="Enter id to search">
+		</div>
+		<button type="submit" class="btn btn-primary">Search</button>
+		<label for="searchNote">Note: Always data is random</label>
+	</form>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>@Html.DisplayName("Id")</th>
+			<th>@Html.DisplayName("Profile Image")</th>
+			<th>@Html.DisplayName("Name")</th>
+			<th>@Html.DisplayName("Last Name")</th>
+			<th>@Html.DisplayName("Age")</th>
+			<th>@Html.DisplayName("Email")</th>
+			<th>@Html.DisplayName("Salary")</th>
+			<th>@Html.DisplayName("Annual Salary")</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var employee in Model)
+		{
+			<tr>
+				<td>@employee.id</td>
+				<td><img src="@employee.imageUrl" alt="Profile Image" style="width: 50px; height: 50px;" /></td>
+				<td>@employee.firstName</td>
+				<td>@employee.lastName</td>
+				<td>@employee.age</td>
+				<td>@employee.email</td>
+				<td>@employee.salary</td>
+				<td>@employee.annualSalary</td>
+			</tr>
+		}
+	</tbody>
+</table> 

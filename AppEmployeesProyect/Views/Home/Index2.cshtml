@@ -1,0 +1,37 @@
+﻿@model List<AppEmployeesProyect.Models.Employee>
+
+@{
+	ViewData["Title"] = "Datos Empleado Por Id";
+}
+
+<div>
+	<form method="get" action="@Url.Action("Index2", "Home")">
+		<div class="form-group">
+			<label for="searchInput">Search:</label>
+			<input type="text" class="form-control" id="searchInput" name="searchString" placeholder="Enter id to search">
+		</div>
+		<button type="submit" class="btn btn-primary">Search</button>
+	</form>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>@Html.DisplayName("Id")</th>
+			<th>@Html.DisplayName("Name")</th>
+			<th>@Html.DisplayName("Salary")</th>
+			<th>@Html.DisplayName("Age")</th>
+			<th>@Html.DisplayName("Profile Image")</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>employee.id</td>
+			<td>employee.firstName</td>
+			<td>employee.salary</td>
+			<td>employee.age</td>
+			<td>employee.imageUrl</td>
+		</tr>
+		
+	</tbody>
+</table> 
