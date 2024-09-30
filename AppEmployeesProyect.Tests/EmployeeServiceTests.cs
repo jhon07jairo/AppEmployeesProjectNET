@@ -25,7 +25,7 @@ namespace AppEmployeesProyect.Tests
 			// Arrange
 			var employee = new Employee
 			{
-				salary = 1000m // Ejemplo de salario
+				salary = 1000m // Ejemplo de salario 
 			};
 
 			// Act
